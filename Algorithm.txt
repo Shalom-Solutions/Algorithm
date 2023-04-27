@@ -1,0 +1,18 @@
+BEGIN
+    SET length = 0
+    SET word_count = 1
+    SET vowel_count = 0
+    READ input_sentence
+    FOR each character IN input_sentence DO
+        IF character = " " THEN
+            SET word_count = word_count + 1
+        ELSEIF character IN ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"] THEN
+            SET vowel_count = vowel_count + 1
+        ENDIF
+        SET length = length + 1
+    END FOR
+    SET length = length - 1 // to exclude the period
+    WRITE "Length of sentence: ", length
+    WRITE "Number of words in sentence: ", word_count
+    WRITE "Number of vowels in sentence: ", vowel_count
+END
